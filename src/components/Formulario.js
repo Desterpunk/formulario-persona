@@ -6,6 +6,8 @@ const Formulario = () => {
         ocupacion: ''
     })
 
+    const [edad, setEdad] = useState("")
+
     const [ocupacion, setOcupacion] = useState("");
 
     const handleInputChange = (event) => {
@@ -21,6 +23,10 @@ const Formulario = () => {
 
     const handleOcupacion=(ocupacion)=>{
         setOcupacion(ocupacion.target.value)
+    }
+
+    const handleEdad = (edad) => {
+        setEdad(edad.target.value)
     }
 
     return ( 
@@ -43,7 +49,7 @@ const Formulario = () => {
                         className="form-control" 
                         type="number"
                         name="edad"
-                        onChange={handleInputChange}
+                        onChange={handleEdad}
                         ></input>
                     </div>
                     <div className="col-md-3">
@@ -59,7 +65,7 @@ const Formulario = () => {
                         <button className="btn btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
-                <h3>{datos.nombre} - {datos.edad} - {ocupacion}</h3>
+                <h3>{datos.nombre} - {edad} - {ocupacion}</h3>
             </Fragment>
             
         </div>

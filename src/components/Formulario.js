@@ -1,10 +1,12 @@
 import React,{Fragment, useState} from 'react';
+import Tabla from './Tabla';
 const Formulario = () => {
     const [datos,setDatos] = useState({
         nombre: '',
         edad: '',
         clasificacionEdad : '',
-        ocupacion : ''
+        ocupacion : '',
+        mensaje: ''
     })
 
     const [edad, setEdad] = useState("")
@@ -18,6 +20,7 @@ const Formulario = () => {
     const enviarDatos = (event) => {
         event.preventDefault();
         datos.clasificacionEdad = edad;
+        datos.mensaje = "Al " + datos.clasificacionEdad +  " " + datos.nombre + " de " +datos.edad+" como "+datos.ocupacion
         console.log("Al " + datos.clasificacionEdad +  " " + datos.nombre + " de " +datos.edad+" como "+datos.ocupacion)
     }
 
@@ -74,8 +77,8 @@ const Formulario = () => {
                         <button className="btn btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
+                <Tabla {...datos} />
             </Fragment>
-            
         </div>
             
         

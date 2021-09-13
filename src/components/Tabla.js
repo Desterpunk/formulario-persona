@@ -13,11 +13,10 @@ const Tabla = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td >props.nombre</td>
-                        <td>props.edad</td>
-                        <td>props.clasificacionEdad</td>
-                        <td>props.ocupacion</td>
+                        <td >{props.nombre}</td>
+                        <td>{props.edad}</td>
+                        <td>{props.ocupacion}</td>
+                        <td>{props.mensaje}</td>
                     </tr>
                 </tbody>
             </table>

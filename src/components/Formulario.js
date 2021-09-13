@@ -2,8 +2,7 @@ import React,{Fragment, useState} from 'react';
 const Formulario = () => {
     const [datos,setDatos] = useState({
         nombre: '',
-        edad: '',
-        ocupacion: ''
+        edad: ''
     })
 
     const [edad, setEdad] = useState("")
@@ -18,7 +17,7 @@ const Formulario = () => {
     }
     const enviarDatos = (event) => {
         event.preventDefault();
-        console.log(datos.nombre+ " " +datos.edad+" "+datos.ocupacion)
+        console.log("Al " + edad +  " " + datos.nombre + " de " +datos.edad+" como "+ocupacion)
     }
 
     const handleOcupacion=(ocupacion)=>{
@@ -26,7 +25,16 @@ const Formulario = () => {
     }
 
     const handleEdad = (edad) => {
-        setEdad(edad.target.value)
+        if(edad.target.value >= 51){
+            setEdad("Mayor")
+        } else if(edad.target.value >= 31 && edad.target.value <= 50){
+            setEdad("Adulto")
+        } else if(edad.target.value >= 13 && edad.target.value <= 30){
+            setEdad("Joven")
+        } else {
+            setEdad("Niño")
+        }
+        
     }
 
     return ( 
@@ -49,7 +57,7 @@ const Formulario = () => {
                         className="form-control" 
                         type="number"
                         name="edad"
-                        onChange={handleEdad}
+                        onChange={handleEdad,handleInputChange}
                         ></input>
                     </div>
                     <div className="col-md-3">
@@ -65,7 +73,6 @@ const Formulario = () => {
                         <button className="btn btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
-                <h3>{datos.nombre} - {edad} - {ocupacion}</h3>
             </Fragment>
             
         </div>

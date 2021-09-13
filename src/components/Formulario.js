@@ -2,12 +2,12 @@ import React,{Fragment, useState} from 'react';
 const Formulario = () => {
     const [datos,setDatos] = useState({
         nombre: '',
-        edad: ''
+        edad: '',
+        clasificacionEdad : '',
+        ocupacion : ''
     })
 
     const [edad, setEdad] = useState("")
-
-    const [ocupacion, setOcupacion] = useState("");
 
     const handleInputChange = (event) => {
         setDatos({
@@ -17,11 +17,12 @@ const Formulario = () => {
     }
     const enviarDatos = (event) => {
         event.preventDefault();
-        console.log("Al " + edad +  " " + datos.nombre + " de " +datos.edad+" como "+ocupacion)
+        datos.clasificacionEdad = edad;
+        console.log("Al " + datos.clasificacionEdad +  " " + datos.nombre + " de " +datos.edad+" como "+datos.ocupacion)
     }
 
     const handleOcupacion=(ocupacion)=>{
-        setOcupacion(ocupacion.target.value)
+        datos.ocupacion = ocupacion.target.value
     }
 
     const handleEdad = (edad) => {
@@ -34,7 +35,7 @@ const Formulario = () => {
         } else {
             setEdad("Niño")
         }
-        
+        datos.edad = edad.target.value
     }
 
     return ( 
@@ -57,7 +58,7 @@ const Formulario = () => {
                         className="form-control" 
                         type="number"
                         name="edad"
-                        onChange={handleEdad,handleInputChange}
+                        onChange={handleEdad}
                         ></input>
                     </div>
                     <div className="col-md-3">

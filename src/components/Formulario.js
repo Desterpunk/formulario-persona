@@ -6,7 +6,7 @@ const Formulario = () => {
         ocupacion: ''
     })
 
-    const [ocupacion, setOcupacion] = useState(null);
+    const [ocupacion, setOcupacion] = useState("");
 
     const handleInputChange = (event) => {
         setDatos({
@@ -20,8 +20,7 @@ const Formulario = () => {
     }
 
     const handleOcupacion=(ocupacion)=>{
-        setOcupacion = {ocupacion};
-        conmouseleave.log(ocupacion);
+        setOcupacion(ocupacion.target.value)
     }
 
     return ( 
@@ -48,12 +47,11 @@ const Formulario = () => {
                         ></input>
                     </div>
                     <div className="col-md-3">
-                        <select className="form-select" aria-label="Default select example" 
-                        >
-                            <option selected>Selectiona su ocupacion</option>
-                            <option value="1">Estudiante</option>
-                            <option value="2">Empleado</option>
-                            <option value="3">Jubilado</option>
+                        <select className="form-select" aria-label="Default select example" onChange={handleOcupacion}>
+                            <option selected>Selecciona su ocupacion</option>
+                            <option value="Estudiante">Estudiante</option>
+                            <option value="Empleado">Empleado</option>
+                            <option value="Jubilado">Jubilado</option>
                         </select>
                     </div>
                     
@@ -61,7 +59,7 @@ const Formulario = () => {
                         <button className="btn btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
-                <h3>{datos.nombre} - {datos.apellido}</h3>
+                <h3>{datos.nombre} - {datos.edad} - {ocupacion}</h3>
             </Fragment>
             
         </div>

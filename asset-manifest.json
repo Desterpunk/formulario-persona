@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/formulario-persona/static/js/main.d632edad.chunk.js",
+    "main.js.map": "/formulario-persona/static/js/main.d632edad.chunk.js.map",
+    "runtime-main.js": "/formulario-persona/static/js/runtime-main.15e6e5fc.js",
+    "runtime-main.js.map": "/formulario-persona/static/js/runtime-main.15e6e5fc.js.map",
+    "static/js/2.fa8e9918.chunk.js": "/formulario-persona/static/js/2.fa8e9918.chunk.js",
+    "static/js/2.fa8e9918.chunk.js.map": "/formulario-persona/static/js/2.fa8e9918.chunk.js.map",
+    "index.html": "/formulario-persona/index.html",
+    "static/js/2.fa8e9918.chunk.js.LICENSE.txt": "/formulario-persona/static/js/2.fa8e9918.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.15e6e5fc.js",
+    "static/js/2.fa8e9918.chunk.js",
+    "static/js/main.d632edad.chunk.js"
+  ]
+}

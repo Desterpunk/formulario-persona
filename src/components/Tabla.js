@@ -1,25 +1,41 @@
+import Mensaje from "./Mensaje";
+
 const Tabla = (props) => {
+
+    let lista = []
+    lista.push(props)
 
     return ( 
         <> 
-            <table class="table">
+            <h2>La tabla</h2>
+            <table className="table">
                 <thead>
                     <tr>
                     <th scope="col">Nombre</th>
                     <th scope="col">Edad</th>
+                    <th scope="col">Clasificacion</th>
                     <th scope="col">Ocupacion</th>
-                    <th scope="col">Mensaje</th>
+                   
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td >props.nombre</td>
-                        <td>props.edad</td>
-                        <td>props.clasificacionEdad</td>
-                        <td>props.ocupacion</td>
-                    </tr>
+                    {props.lista &&
+                        props.lista.map((data, index)=>{
+                            return(
+                                <tr key={index}>
+                                    <td >{data.nombre}</td>
+                                    <td>{data.edad}</td>
+                                    <td>{data.clasificacionEdad}</td>
+                                    <td>{data.ocupacion}</td>
+                                    <td> <Mensaje {...data}/></td>
+                                </tr>
+                            )
+                        })
+                        
+                    }
+                    
                 </tbody>
+                
             </table>
          </>
      );
